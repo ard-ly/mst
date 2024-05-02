@@ -24,3 +24,5 @@ def send_email_and_notification(doc, method):
             # attachments=[{"file_url": "/app/lead/{doc.reference_name}"}],
             # subject="New Task",
             )
+        else:
+            msgprint(_("Please Allocate Task To The User."))
