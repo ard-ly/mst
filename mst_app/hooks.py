@@ -132,6 +132,17 @@ doctype_js = {
 #	}
 # }
 
+doc_events = {
+	"ToDo": {
+		"validate": "mst_app.override.py.todo.send_email_and_notification",
+	},
+    # "Lead": {
+	# 	"on_update": "mst_app.override.py.lead.send_email_and_notification",
+	# },
+
+}
+
+
 # Scheduled Tasks
 # ---------------
 
