@@ -31,6 +31,11 @@ app_license = "MIT"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+
+doctype_js = {
+    "Lead" : "override/js/lead.js",
+    }
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -126,6 +131,17 @@ app_license = "MIT"
 #		"on_trash": "method"
 #	}
 # }
+
+doc_events = {
+	"ToDo": {
+		"validate": "mst_app.override.py.todo.send_email_and_notification",
+	},
+    # "Lead": {
+	# 	"on_update": "mst_app.override.py.lead.send_email_and_notification",
+	# },
+
+}
+
 
 # Scheduled Tasks
 # ---------------
