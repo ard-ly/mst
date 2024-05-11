@@ -35,6 +35,7 @@ app_license = "MIT"
 doctype_js = {
     "Lead" : "override/js/lead.js",
     "Journal Entry":"override/js/journal_entry.js",
+    "Stock Entry":"override/js/stock_entry.js",
     }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
