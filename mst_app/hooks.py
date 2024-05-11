@@ -36,6 +36,7 @@ doctype_js = {
     "Lead" : "override/js/lead.js",
     "Journal Entry":"override/js/journal_entry.js",
     "Stock Entry":"override/js/stock_entry.js",
+    "Sales Order":"override/js/sales_order.js"
     }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
