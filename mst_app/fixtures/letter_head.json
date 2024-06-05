@@ -1,0 +1,25 @@
+[
+ {
+  "align": "Left",
+  "content": "<div style=\"text-align: left;\">\n<img src=\"/assets/mst_app/imgs/letter-head/logo.svg\" alt=\"MST LH 01\" height=\"40.0\" style=\"height: 40.0px;\">\n</div>",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": "<div style=\"text-align: center;\">\n<img src=\"/assets/mst_app/imgs/letter-head/footer.jpg\" alt=\"MST LH 01\" height=\"\" style=\"height: px;\">\n</div>",
+  "footer_align": "Center",
+  "footer_image": "/files/WhatsApp Image 2024-05-02 at 13.00.58_e5b526d9.jpg",
+  "footer_image_height": 0.0,
+  "footer_image_width": 0.0,
+  "footer_script": null,
+  "footer_source": "HTML",
+  "header_script": null,
+  "image": "/files/photo_2.svg",
+  "image_height": 40.0,
+  "image_width": 0.0,
+  "is_default": 1,
+  "letter_head_name": "MST LH 01",
+  "modified": "2024-06-05 14:18:02.856490",
+  "name": "MST LH 01",
+  "source": "HTML"
+ }
+]
