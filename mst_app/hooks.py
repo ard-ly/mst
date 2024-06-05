@@ -7,9 +7,11 @@ app_description = "ERPnext App"
 app_email = "aseel.gharbia@gmail.com"
 app_license = "MIT"
 
+# Exported fixtues
+fixtures = ['Letter Head']
+
 # Includes in <head>
 # ------------------
-
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/mst_app/css/mst_app.css"
