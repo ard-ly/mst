@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-01 13:38:53.739073",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "technical_questions_tab",
+  "technical_questionnaire_table",
+  "technical_total_weight",
+  "hardware_questions_tab",
+  "hardware_questionnaire_table",
+  "hardware_total_weight",
+  "software_questions_tab",
+  "software_questionnaire_table",
+  "software_total_weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "technical_questions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Technical Questions"
+  },
+  {
+   "fieldname": "hardware_questions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Hardware Questions"
+  },
+  {
+   "fieldname": "software_questions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Software Questions"
+  },
+  {
+   "fieldname": "technical_questionnaire_table",
+   "fieldtype": "Table",
+   "label": "Technical Questionnaire Table",
+   "options": "Questionnaire Settings Table"
+  },
+  {
+   "fieldname": "hardware_questionnaire_table",
+   "fieldtype": "Table",
+   "label": "Hardware Questionnaire Table",
+   "options": "Questionnaire Settings Table"
+  },
+  {
+   "fieldname": "software_questionnaire_table",
+   "fieldtype": "Table",
+   "label": "Software Questionnaire Table",
+   "options": "Questionnaire Settings Table"
+  },
+  {
+   "fieldname": "technical_total_weight",
+   "fieldtype": "Float",
+   "label": "Technical Total Weight"
+  },
+  {
+   "fieldname": "hardware_total_weight",
+   "fieldtype": "Float",
+   "label": "Hardware Total Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "software_total_weight",
+   "fieldtype": "Float",
+   "label": "Software Total Weight",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-02 16:25:36.092280",
+ "modified_by": "Administrator",
+ "module": "Mst App",
+ "name": "Questionnaire Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
