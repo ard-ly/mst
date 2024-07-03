@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-03 19:00:56.082231",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "qualification_table",
+  "section_break_u5up",
+  "qualification_mark"
+ ],
+ "fields": [
+  {
+   "fieldname": "qualification_mark",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qualification mark",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualification_table",
+   "fieldtype": "Table",
+   "label": "Qualification Table",
+   "options": "Qualification Table"
+  },
+  {
+   "fieldname": "section_break_u5up",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-03 19:18:22.544548",
+ "modified_by": "Administrator",
+ "module": "Mst App",
+ "name": "Lead Qualification Matrix",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

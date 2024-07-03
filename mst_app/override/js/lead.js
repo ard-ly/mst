@@ -13,15 +13,43 @@ frappe.ui.form.on("Lead", {
 		else if (frm.doc.source == "Supplier Reference"){
 			frm.set_value("custom_document_type", "Supplier");
 		}
-		else{
-			frm.set_query("custom_document_type", function() {
-				return {
-					"filters": {
-						"issingle": 0 ,
-						"istable": 0 
-					}
-				};
-			});	
+		else if (frm.doc.source == "Customer's Vendor"){
+			frm.set_value("custom_document_type", "Supplier");
+
 		}
+		else{
+			frm.doc.custom_document_type = "";
+			frm.refresh_field("custom_document_type");
+			// frm.set_query("custom_document_type", function() {
+			// 	return {
+			// 		"filters": {
+			// 			"issingle": 0 ,
+			// 			"istable": 0 
+			// 		}
+			// 	};
+			// });	
+		}
+
+		
+
 	},
+});
+frappe.ui.form.on("Lead Qualification", {
+	qualification: function (frm, cdt, cdn) {
+		let row = locals[cdt][cdn];
+		frappe.call({
+			method: "mst_app.override.py.lead.get_qualification_value",
+			args: {
+				qualification: row.qualification,
+			},
+			callback: r => {
+				if (!r.exc && r.message){
+					console.log(r.message);
+					// cur_frm.set_df_property("child_table_field_name","options",["A","B","C","D"],"current_form_name","field_name_of_chils_table","name_of_child_table_row")
+					frm.set_df_property("custom_lead_qualification",  'options', r.message, frm.docname, 'value',row.name );
+				}
+			}
+		});
+	},
+
 });
