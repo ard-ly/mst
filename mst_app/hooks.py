@@ -38,7 +38,8 @@ doctype_js = {
     "Lead" : "override/js/lead.js",
     "Journal Entry":"override/js/journal_entry.js",
     "Stock Entry":"override/js/stock_entry.js",
-    "Sales Order":"override/js/sales_order.js"
+    "Sales Order":"override/js/sales_order.js",
+    "Event" : "override/js/event.js",
     }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -144,6 +145,10 @@ doc_events = {
     "Lead": {
 		"validate": "mst_app.override.py.lead.get_qualification_marks",
 	},
+    "Event":{
+        "validate": "mst_app.override.py.event.send_notification",
+        "validate": "mst_app.override.py.event.move_event",
+    }
 
 }
 
