@@ -1,7 +1,4 @@
 frappe.ui.form.on("Lead", {
-    // refresh: function(frm) {
-
-	// },
 
     source(frm) {
 		if (frm.doc.source == "Campaign"){
@@ -19,21 +16,12 @@ frappe.ui.form.on("Lead", {
 		}
 		else{
 			frm.doc.custom_document_type = "";
-			frm.refresh_field("custom_document_type");
-			// frm.set_query("custom_document_type", function() {
-			// 	return {
-			// 		"filters": {
-			// 			"issingle": 0 ,
-			// 			"istable": 0 
-			// 		}
-			// 	};
-			// });	
+			frm.refresh_field("custom_document_type");	
 		}
-
-		
-
 	},
 });
+
+
 frappe.ui.form.on("Lead Qualification", {
 	qualification: function (frm, cdt, cdn) {
 		let row = locals[cdt][cdn];

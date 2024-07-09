@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class TasksAndEvents(Document):
+class OpportunityTasks(Document):
 	pass

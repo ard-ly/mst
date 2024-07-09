@@ -40,6 +40,7 @@ doctype_js = {
     "Stock Entry":"override/js/stock_entry.js",
     "Sales Order":"override/js/sales_order.js",
     "Event" : "override/js/event.js",
+    "Opportunity":"override/js/opportunity.js",
     }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -141,6 +142,8 @@ doctype_js = {
 doc_events = {
 	"ToDo": {
 		"validate": "mst_app.override.py.todo.send_email_and_notification",
+        "validate": "mst_app.override.py.todo.move_task",
+
 	},
     "Lead": {
 		"validate": "mst_app.override.py.lead.get_qualification_marks",
@@ -148,8 +151,11 @@ doc_events = {
     "Event":{
         "validate": "mst_app.override.py.event.send_notification",
         "validate": "mst_app.override.py.event.move_event",
-    }
+    },
 
+    "Opportunity":{
+        "validate": "mst_app.override.py.opportunity.new_items_notes",
+    },
 }
 
 
@@ -242,3 +248,24 @@ doc_events = {
 # auth_hooks = [
 #	"mst_app.auth.validate"
 # ]
+
+fixtures = [
+    {"dt": "DocType Layout"},
+    {"dt": "Translation"},
+       
+    {
+        "dt": "Role",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Pre Sales",
+                  
+                ],
+            ]
+        ],
+    },
+  
+]
+

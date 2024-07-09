@@ -22,3 +22,25 @@ def send_email_and_notification(doc, method):
             )
         else:
             msgprint(_("Please Allocate Task To The User."))
+
+
+@frappe.whitelist()
+def move_task(doc,method):
+    if doc.status != 'Open': 
+        if doc.reference_type == 'Opportunity':
+            # reference_name
+            tasks_and_events = frappe.db.sql(f""" select * from `tabOpportunity Tasks` WHERE parent = '{doc.reference_name}' AND task = '{doc.name}' """,as_dict=1)
+            print(tasks_and_events)
+            if tasks_and_events: 
+                frappe.db.sql(f""" UPDATE `tabOpportunity Tasks` SET status='{doc.status}' WHERE parent = '{doc.reference_name}' AND task = '{doc.name}' AND parentfield = 'custom_tasks' AND parenttype = 'Opportunity' """)
+                frappe.db.commit()
+                        
+            else:
+                new_doc = frappe.new_doc("Opportunity Tasks")
+                new_doc.parent = doc.reference_name
+                new_doc.parentfield = 'custom_tasks'
+                new_doc.parenttype = 'Opportunity'
+                new_doc.task = doc.name
+                new_doc.description = doc.description
+                new_doc.status = doc.status
+                new_doc.insert(ignore_permissions=True)
