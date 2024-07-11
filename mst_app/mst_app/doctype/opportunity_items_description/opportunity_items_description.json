@@ -21,8 +21,7 @@
   },
   {
    "fieldname": "item_description",
-   "fieldtype": "Data",
-   "in_list_view": 1,
+   "fieldtype": "Small Text",
    "label": "Item Description",
    "reqd": 1
   },
@@ -44,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-06 15:52:40.007259",
+ "modified": "2024-07-11 13:38:20.901775",
  "modified_by": "Administrator",
  "module": "Mst App",
  "name": "Opportunity Items Description",
