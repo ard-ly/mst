@@ -10,7 +10,7 @@ class QuestionnaireSettings(Document):
 	@frappe.whitelist()
 	def get_category(self,question):
 		catagory = ''
-		cato_list = frappe.db.sql(f""" SELECT questions_category FROM `tabMulti Questions Category` WHERE parenttype= 'Questions' AND parent='{question}' """,as_dict=1,)
+		cato_list = frappe.db.sql(f""" SELECT questions_category FROM `tabMulti Questions Category` WHERE parenttype= 'Questions' AND parent='{question}' """,as_dict=1)
 		for row in cato_list:
 			catagory += row.questions_category + ", "
 		return catagory

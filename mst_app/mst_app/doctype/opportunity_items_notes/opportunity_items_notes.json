@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CRM-OIN-.####",
+ "creation": "2024-07-09 10:41:06.794419",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "opportunity_items_description",
+  "item_name",
+  "item_description",
+  "notes",
+  "share_to",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Opportunity Items Notes",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "opportunity_items_description",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Opportunity Items Description",
+   "options": "Opportunity Items Description"
+  },
+  {
+   "fetch_from": "opportunity_items_description.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "opportunity_items_description.item_description",
+   "fieldname": "item_description",
+   "fieldtype": "Data",
+   "label": "Item Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "share_to",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Share To",
+   "options": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-09 14:43:19.600010",
+ "modified_by": "Administrator",
+ "module": "Mst App",
+ "name": "Opportunity Items Notes",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pre Sales",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
