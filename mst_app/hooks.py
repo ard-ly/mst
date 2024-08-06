@@ -78,6 +78,7 @@ doctype_js = {
 
 # before_install = "mst_app.install.before_install"
 # after_install = "mst_app.install.after_install"
+after_install = "mst_app.install.after_install"
 
 # Uninstallation
 # ------------
@@ -162,7 +163,10 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+    "daily": [
+		"mst_app.tasks.issue_reminder",
+	],
 #	"all": [
 #		"mst_app.tasks.all"
 #	],
@@ -178,7 +182,7 @@ doc_events = {
 #	"monthly": [
 #		"mst_app.tasks.monthly"
 #	],
-# }
+}
 
 # Testing
 # -------
@@ -261,6 +265,7 @@ fixtures = [
                 "in",
                 [
                     "Pre Sales",
+                    "supervisor",
                   
                 ],
             ]
