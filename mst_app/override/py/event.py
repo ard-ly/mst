@@ -1,6 +1,7 @@
 import frappe
 from frappe import _, msgprint, throw
 from frappe.utils import today
+from mst_app.tasks import create_notification
 
 
 @frappe.whitelist()
@@ -15,6 +16,7 @@ def send_notification(doc,method):
                     if customer_doc.account_manager:
                         users.append(customer_doc.account_manager)
     
+    # create_notification(users, doc.subject, "Event", doc.name)
     for user in users :
         email_cont = 'Assignment for Event ' + doc.name
         new_doc = frappe.new_doc("Notification Log")

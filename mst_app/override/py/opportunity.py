@@ -1,6 +1,7 @@
 import frappe
 from frappe import _, msgprint, throw
 from frappe.utils import today
+from mst_app.tasks import create_notification
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
@@ -31,6 +32,7 @@ def new_items_notes(doc,method):
                 new_doc.share_to = row.share_to
                 new_doc.insert(ignore_permissions=True)
 
+                # create_notification(recipients, subject, doctype, docname)
                 new_notification = frappe.new_doc("Notification Log")
                 new_notification.from_user = frappe.session.user
                 new_notification.for_user = row.share_to

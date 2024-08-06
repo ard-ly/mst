@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Ticket-.#####",
+ "creation": "2024-07-29 14:05:37.549505",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "existing_customer",
+  "section_break_customer_info",
+  "sla_number",
+  "customer_name",
+  "company_name",
+  "company_location",
+  "column_break_wb8b",
+  "email",
+  "phone",
+  "section_break_topic",
+  "topic",
+  "section_break_issue",
+  "issue",
+  "issue_summary",
+  "attachment",
+  "priority",
+  "section_break_hpe",
+  "serial_number",
+  "product_number",
+  "section_break_guf6",
+  "payment_accept",
+  "start_date",
+  "end_date",
+  "on_site"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "existing_customer",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Existing Customer"
+  },
+  {
+   "fieldname": "section_break_customer_info",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "depends_on": "company_name",
+   "fieldname": "company_location",
+   "fieldtype": "Data",
+   "label": "Company Location"
+  },
+  {
+   "fieldname": "column_break_wb8b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "depends_on": "customer_name",
+   "fieldname": "section_break_topic",
+   "fieldtype": "Section Break",
+   "label": "Ticket Details"
+  },
+  {
+   "fieldname": "topic",
+   "fieldtype": "Select",
+   "label": "Topic",
+   "options": "\nFeedback\nGeneral Technical Support\nNetworking Problem\nHardware failure\nSoftware Problem\nSystem Problem\nHPE Systems\nVMware",
+   "reqd": 1
+  },
+  {
+   "depends_on": "topic",
+   "fieldname": "section_break_issue",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Data",
+   "label": "Issue",
+   "reqd": 1
+  },
+  {
+   "depends_on": "issue",
+   "fieldname": "issue_summary",
+   "fieldtype": "Small Text",
+   "label": "Issue Summary"
+  },
+  {
+   "depends_on": "issue",
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "depends_on": "issue",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.topic == 'HPE Systems' ||  doc.topic == 'VMware'",
+   "fieldname": "section_break_hpe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "label": "Serial Number"
+  },
+  {
+   "fieldname": "product_number",
+   "fieldtype": "Data",
+   "label": "Product Number"
+  },
+  {
+   "depends_on": "priority",
+   "fieldname": "section_break_guf6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.existing_customer == 0 ",
+   "fieldname": "payment_accept",
+   "fieldtype": "Check",
+   "label": "Payment Accept"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "on_site",
+   "fieldtype": "Select",
+   "label": "On Site",
+   "options": "\non site\nRemotely",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.existing_customer == 1",
+   "fieldname": "sla_number",
+   "fieldtype": "Link",
+   "label": "SLA Number",
+   "options": "Service Level Agreement"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-03 16:28:59.057140",
+ "modified_by": "Administrator",
+ "module": "Mst App",
+ "name": "Ticket",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
