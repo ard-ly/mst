@@ -72,6 +72,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email",
+   "options": "Email",
    "reqd": 1
   },
   {
@@ -181,7 +182,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-03 16:28:59.057140",
+ "modified": "2024-08-15 18:08:50.080835",
  "modified_by": "Administrator",
  "module": "Mst App",
  "name": "Ticket",
